@@ -394,9 +394,30 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
     }
 }
 
-/* 本地 Obsidian 代码块微调 */
+/* 本地 Obsidian 编辑模式代码块 */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
     font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    background-color: var(--background-secondary);
+    border-left: 1px solid var(--background-modifier-border);
+    border-right: 1px solid var(--background-modifier-border);
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+/* 代码块开头行：上边框 + 上圆角 */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+    border-top: 1px solid var(--background-modifier-border);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 8px;
+}
+
+/* 代码块结尾行：下边框 + 下圆角 */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+    border-bottom: 1px solid var(--background-modifier-border);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-bottom: 8px;
 }
 
 /* ============================================================
