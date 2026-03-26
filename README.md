@@ -8,11 +8,11 @@ A minimal Obsidian theme inspired by Claude's interface design.
 
 Light Mode
 
-![alt text](./assets/light.png)
+![light mode](./assets/light.png)
 
 Dark Mode
 
-![alt text](./assets/dark.png)
+![dark mode](./assets/dark.png)
 
 ## Features
 
@@ -44,6 +44,14 @@ Copy `theme.css` to your vault root and rename it to `publish.css`, then publish
 | Sidebar | `#F0EDE6` | `#1C1A18` |
 | Text | `#2D2D2D` | `#EBEBEB` |
 | Accent | `#CF6530` | `#D97757` |
+
+## Changelog
+
+### v1.0.0
+- Initial release
+- Light & dark mode support
+- Callout, blockquote, list styling
+- Obsidian Publish compatible
 
 ## License
 
