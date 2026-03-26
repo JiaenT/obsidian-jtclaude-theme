@@ -204,13 +204,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 通用列表（Publish 使用） */
-ul, ol {
+ul, ol,
+.publish-article ul,
+.publish-article ol,
+.markdown-preview-view ul,
+.markdown-preview-view ol {
     padding-left: 1.5em !important;
     margin: 0.5em 0;
 }
 
-ul li, ol li {
+ul li, ol li,
+.publish-article ul li,
+.publish-article ol li {
     margin-bottom: 0.4em;
+    padding-left: 0 !important;
 }
 
 /* 松散列表：Publish 会把有空行的列表项包成 <p> */
@@ -254,16 +261,24 @@ blockquote {
 }
 
 .markdown-rendered ul,
-.markdown-preview-view ul {
-    padding-left: 1.5em;
+.markdown-preview-view ul,
+.markdown-rendered ol,
+.markdown-preview-view ol {
+    padding-left: 1.5em !important;
     margin: 0.5em 0;
 }
 
 .markdown-rendered ul li,
-.markdown-preview-view ul li {
+.markdown-preview-view ul li,
+.markdown-rendered ol li,
+.markdown-preview-view ol li {
     margin-bottom: 0.5em;
-    list-style-type: disc;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
+
+.markdown-rendered ul li { list-style-type: disc; }
+.markdown-rendered ol li { list-style-type: decimal; }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
     padding-left: 0.2em;
