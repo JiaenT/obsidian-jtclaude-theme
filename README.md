@@ -6,11 +6,14 @@ A minimal Obsidian theme inspired by Claude's interface design.
 
 **Live demo:** [jiaentbewater](https://publish.obsidian.md/jiaentbewater)
 
-Light Mode:
+Light Mode
+
 ![alt text](./assets/light.png)
 
-Dark Mode:
+Dark Mode
+
 ![alt text](./assets/dark.png)
+
 ## Features
 
 - Warm beige background inspired by Claude's chat interface
