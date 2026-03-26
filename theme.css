@@ -333,6 +333,73 @@ blockquote {
 }
 
 /* ============================================================
+   代码块 - 通用（本地 + Publish 均生效）
+   ============================================================ */
+pre, .markdown-rendered pre, .publish-article pre {
+    background-color: var(--background-secondary, #F0EDE6);
+    border: 1px solid var(--background-modifier-border, #EBEBEB);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 1em 0;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+code, .markdown-rendered code, .publish-article code {
+    font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+}
+
+/* 行内代码 */
+:not(pre) > code,
+.markdown-rendered :not(pre) > code,
+.publish-article :not(pre) > code {
+    background-color: var(--background-secondary, #F0EDE6);
+    border: 1px solid var(--background-modifier-border, #EBEBEB);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.85em;
+}
+
+/* 代码块内的 code 不要额外样式 */
+pre code, .markdown-rendered pre code, .publish-article pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+/* 暗色代码块 */
+.theme-dark pre, .theme-dark .publish-article pre {
+    background-color: #1C1A18;
+    border-color: #3A3835;
+}
+.theme-dark :not(pre) > code, .theme-dark .publish-article :not(pre) > code {
+    background-color: #1C1A18;
+    border-color: #3A3835;
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not(.theme-light) pre,
+    body:not(.theme-light) .publish-article pre {
+        background-color: #1C1A18;
+        border-color: #3A3835;
+    }
+    body:not(.theme-light) :not(pre) > code,
+    body:not(.theme-light) .publish-article :not(pre) > code {
+        background-color: #1C1A18;
+        border-color: #3A3835;
+    }
+}
+
+/* 本地 Obsidian 代码块微调 */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+    font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+/* ============================================================
    Callout - 通用（本地 + Publish 均生效）
    ============================================================ */
 .callout {
