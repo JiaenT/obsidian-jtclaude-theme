@@ -1,0 +1,8 @@
+{
+	"name": "JTClaude",
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0",
+	"author": "JiaenT",
+	"authorUrl": "https://github.com/JiaenT",
+	"modes": ["light", "dark"]
+}

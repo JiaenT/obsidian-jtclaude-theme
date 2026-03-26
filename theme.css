@@ -1,0 +1,338 @@
+/* Claude-Inspired Theme for Obsidian
+ * 统一文件：同时适用于本地 Obsidian 和 Obsidian Publish
+ * 发布时直接复制此文件到 vault 根目录，命名为 publish.css
+ */
+
+/* ============================================================
+   文字选中高亮
+   ============================================================ */
+::selection {
+    background-color: rgba(207, 101, 48, 0.2);
+    color: inherit;
+}
+
+/* ============================================================
+   浅色模式变量（本地 Obsidian）
+   ============================================================ */
+.theme-light {
+    --background-primary: #FAF9F5;
+    --background-secondary: #F0EDE6;
+    --background-secondary-alt: #E8E4DC;
+
+    --text-normal: #2D2D2D;
+    --text-muted: #737373;
+    --text-faint: #A3A3A3;
+
+    --background-modifier-border: #EBEBEB;
+    --divider-color: #EBEBEB;
+
+    --interactive-accent: #CF6530;
+    --interactive-accent-hover: #B8522A;
+    --text-accent: #CF6530;
+    --text-accent-hover: #B8522A;
+
+    --tag-background: rgba(207, 101, 48, 0.08);
+    --tag-background-hover: rgba(207, 101, 48, 0.14);
+    --tag-color: #CF6530;
+    --tag-color-hover: #B8522A;
+    --tag-border-color: rgba(207, 101, 48, 0.25);
+    --tag-border-color-hover: rgba(207, 101, 48, 0.4);
+    --background-modifier-hover: rgba(207, 101, 48, 0.06);
+
+    --font-ui: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --font-text-theme: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "Georgia", serif;
+    --font-interface: var(--font-text-theme);
+    --font-interface-override: var(--font-text-theme);
+
+    --h1-color: #111111;
+    --h2-color: #111111;
+    --h3-color: #222222;
+}
+
+/* ============================================================
+   暗色模式变量（本地 Obsidian）
+   ============================================================ */
+.theme-dark {
+    --background-primary: #2A2825;
+    --background-secondary: #1C1A18;
+    --background-secondary-alt: #161412;
+
+    --text-normal: #EBEBEB;
+    --text-muted: #999590;
+    --text-faint: #636058;
+
+    --background-modifier-border: #3A3835;
+    --divider-color: #3A3835;
+
+    --interactive-accent: #D97757;
+    --interactive-accent-hover: #E8895F;
+    --text-accent: #D97757;
+    --text-accent-hover: #E8895F;
+
+    --tag-background: rgba(217, 119, 87, 0.12);
+    --tag-background-hover: rgba(217, 119, 87, 0.2);
+    --tag-color: #D97757;
+    --tag-color-hover: #E8895F;
+    --tag-border-color: rgba(217, 119, 87, 0.3);
+    --tag-border-color-hover: rgba(217, 119, 87, 0.5);
+    --background-modifier-hover: rgba(217, 119, 87, 0.08);
+
+    --font-text-theme: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "Georgia", serif;
+    --font-interface: var(--font-text-theme);
+    --font-interface-override: var(--font-text-theme);
+
+    --h1-color: #FFFFFF;
+    --h2-color: #FFFFFF;
+    --h3-color: #EBEBEB;
+}
+
+/* ============================================================
+   暗色模式样式（Publish 手动切换 .theme-dark）
+   ============================================================ */
+.theme-dark body,
+.theme-dark .site-body,
+.theme-dark .site-body-center-column,
+.theme-dark .publish-article {
+    background-color: #2A2825;
+    color: #EBEBEB;
+}
+
+.theme-dark .site-header,
+.theme-dark .site-body-left-column,
+.theme-dark .nav-view,
+.theme-dark .site-footer {
+    background-color: #1C1A18 !important;
+    color: #EBEBEB;
+    border-color: #3A3835 !important;
+}
+
+.theme-dark .nav-view a,
+.theme-dark .tree-item-self,
+.theme-dark .nav-file-title,
+.theme-dark .nav-folder-title {
+    color: #EBEBEB;
+}
+
+.theme-dark .site-body-right-column {
+    background-color: #2A2825;
+    color: #999590;
+}
+
+.theme-dark h1, .theme-dark h2, .theme-dark h3,
+.theme-dark h4, .theme-dark h5, .theme-dark h6 {
+    color: #FFFFFF;
+}
+
+.theme-dark strong, .theme-dark b { color: #FFFFFF; }
+.theme-dark a { color: #D97757 !important; }
+.theme-dark a:hover { color: #E8895F !important; }
+.theme-dark hr { border-color: #3A3835; }
+
+.theme-dark blockquote {
+    background-color: #1C1A18;
+    border-left-color: #3A3835;
+    color: #EBEBEB;
+}
+
+.theme-dark .callout {
+    background-color: rgba(217, 119, 87, 0.1) !important;
+    border-color: rgba(217, 119, 87, 0.3) !important;
+}
+.theme-dark .callout-title,
+.theme-dark .callout-title-inner { color: #D97757 !important; }
+.theme-dark .callout-icon,
+.theme-dark .callout-icon svg {
+    color: #D97757 !important;
+    stroke: #D97757 !important;
+}
+
+/* ============================================================
+   暗色模式样式（系统暗色兜底，未手动选 light 时生效）
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+    body:not(.theme-light),
+    body:not(.theme-light) .site-body,
+    body:not(.theme-light) .site-body-center-column,
+    body:not(.theme-light) .publish-article {
+        background-color: #2A2825;
+        color: #EBEBEB;
+    }
+    body:not(.theme-light) .site-header,
+    body:not(.theme-light) .site-body-left-column,
+    body:not(.theme-light) .nav-view,
+    body:not(.theme-light) .site-footer {
+        background-color: #1C1A18 !important;
+        color: #EBEBEB;
+        border-color: #3A3835 !important;
+    }
+    body:not(.theme-light) .nav-view a,
+    body:not(.theme-light) .tree-item-self { color: #EBEBEB; }
+    body:not(.theme-light) .site-body-right-column { background-color: #2A2825; color: #999590; }
+    body:not(.theme-light) h1,
+    body:not(.theme-light) h2,
+    body:not(.theme-light) h3,
+    body:not(.theme-light) h4,
+    body:not(.theme-light) h5,
+    body:not(.theme-light) h6 { color: #FFFFFF; }
+    body:not(.theme-light) strong,
+    body:not(.theme-light) b { color: #FFFFFF; }
+    body:not(.theme-light) a { color: #D97757 !important; }
+    body:not(.theme-light) a:hover { color: #E8895F !important; }
+    body:not(.theme-light) hr { border-color: #3A3835; }
+    body:not(.theme-light) blockquote { background-color: #1C1A18; border-left-color: #3A3835; color: #EBEBEB; }
+    body:not(.theme-light) .callout { background-color: rgba(217, 119, 87, 0.1) !important; border-color: rgba(217, 119, 87, 0.3) !important; }
+    body:not(.theme-light) .callout-title,
+    body:not(.theme-light) .callout-title-inner { color: #D97757 !important; }
+    body:not(.theme-light) .callout-icon,
+    body:not(.theme-light) .callout-icon svg { color: #D97757 !important; stroke: #D97757 !important; }
+}
+
+/* ============================================================
+   排版 - 通用（本地 + Publish 均生效）
+   ============================================================ */
+strong, b {
+    font-weight: 700;
+    color: inherit;
+}
+
+/* 通用标题（Publish 使用） */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "Georgia", serif;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+/* 通用列表（Publish 使用） */
+ul, ol {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+ul li, ol li {
+    margin-bottom: 0.4em;
+}
+
+/* 松散列表：Publish 会把有空行的列表项包成 <p> */
+ul li p, ol li p {
+    margin: 0;
+    padding: 0;
+}
+
+/* 通用 blockquote（Publish 使用） */
+blockquote {
+    background-color: var(--background-secondary, #F0EDE6);
+    border-left: 4px solid var(--background-modifier-border, #EBEBEB);
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: var(--text-normal, #2D2D2D);
+    margin: 1em 0;
+}
+
+/* ============================================================
+   排版 - 本地 Obsidian 专用（Publish 中被忽略）
+   ============================================================ */
+.app-container {
+    font-family: var(--font-text-theme);
+}
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+    font-family: var(--font-text-theme);
+    line-height: 1.75;
+    font-size: 16px;
+}
+
+.markdown-rendered h1, .markdown-rendered h2, .markdown-rendered h3,
+.markdown-rendered h4, .markdown-rendered h5, .markdown-rendered h6,
+.cm-header {
+    font-family: var(--font-text-theme);
+    font-weight: 600;
+    color: var(--h1-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.markdown-rendered ul,
+.markdown-preview-view ul {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+}
+
+.markdown-rendered ul li,
+.markdown-preview-view ul li {
+    margin-bottom: 0.5em;
+    list-style-type: disc;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
+    padding-left: 0.2em;
+}
+
+.markdown-rendered blockquote {
+    background-color: var(--background-secondary);
+    border-left: 4px solid var(--background-modifier-border);
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: var(--text-normal);
+    margin: 1em 0;
+}
+
+/* ============================================================
+   界面 - 本地 Obsidian 专用（Publish 中被忽略）
+   ============================================================ */
+.workspace-split.mod-left-split {
+    background-color: var(--background-secondary);
+    border-right: 1px solid var(--background-modifier-border);
+}
+
+.nav-file-title,
+.nav-folder-title,
+.nav-file-title-content,
+.nav-folder-title-content,
+.nav-folder-children,
+.workspace-tab-header,
+.workspace-leaf-tab,
+.side-dock-title,
+.tree-item-self,
+.tree-item-inner,
+.nav-buttons-container,
+.workspace-ribbon,
+.workspace-split.mod-left-split *,
+.workspace-split.mod-right-split *,
+[class^="mk-"],
+[class*=" mk-"] {
+    font-family: var(--font-text-theme) !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-preview-view .markdown-preview-sizer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.workspace-leaf-content {
+    border: none !important;
+}
+
+/* ============================================================
+   Callout - 通用（本地 + Publish 均生效）
+   ============================================================ */
+.callout {
+    --callout-color: 207, 101, 48 !important;
+    background-color: rgba(207, 101, 48, 0.08) !important;
+    border-color: rgba(207, 101, 48, 0.3) !important;
+}
+
+.callout-title,
+.callout-title-inner {
+    color: #CF6530 !important;
+}
+
+.callout-icon,
+.callout-icon svg {
+    color: #CF6530 !important;
+    stroke: #CF6530 !important;
+}
