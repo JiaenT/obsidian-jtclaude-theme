@@ -4,7 +4,7 @@ A minimal Obsidian theme inspired by Claude's interface design.
 
 **Supports both Light and Dark mode.**
 
-**Live demo:** [publish.obsidian.md/jiaentbewater](https://publish.obsidian.md/jiaentbewater)
+**Live demo:** [jiaentbewater](https://publish.obsidian.md/jiaentbewater)
 
 Light Mode:
 ![alt text](./assets/light.png)
