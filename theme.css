@@ -421,6 +421,48 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
 }
 
 /* ============================================================
+   表格 - 通用（本地 + Publish 均生效）
+   ============================================================ */
+.markdown-rendered table,
+.markdown-preview-view table,
+.publish-article table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none !important;
+}
+
+.markdown-rendered table th,
+.markdown-preview-view table th,
+.publish-article table th {
+    text-align: left !important;
+    padding: 12px 16px !important;
+    border: none !important;
+    border-bottom: 2px solid var(--text-normal, #3D3929) !important;
+    font-weight: 600;
+}
+
+.markdown-rendered table td,
+.markdown-preview-view table td,
+.publish-article table td {
+    text-align: left !important;
+    padding: 14px 16px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--background-modifier-border, #EBEBEB) !important;
+}
+
+.markdown-rendered table tr,
+.markdown-preview-view table tr,
+.publish-article table tr {
+    background: none !important;
+}
+
+.markdown-rendered table thead tr,
+.markdown-preview-view table thead tr,
+.publish-article table thead tr {
+    background: none !important;
+}
+
+/* ============================================================
    Callout - 通用（本地 + Publish 均生效）
    ============================================================ */
 .callout {
