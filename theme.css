@@ -12,6 +12,32 @@
 }
 
 /* ============================================================
+   代码主题变量（默认浅色，供 Publish 与无主题类场景兜底）
+   ============================================================ */
+:root {
+    --jt-code-block-bg: #FFFFFF;
+    --jt-code-inline-bg: #F0EDE6;
+    --jt-code-border: #EBEBEB;
+    --jt-code-text: #2D2D2D;
+    --jt-code-inline-text: #CF6530;
+    --jt-code-copy-button-color: #737373;
+    --jt-code-copy-button-hover-bg: rgba(207, 101, 48, 0.08);
+
+    --code-background: var(--jt-code-block-bg);
+    --code-normal: var(--jt-code-text);
+    --code-comment: #999999;
+    --code-function: #2D2D2D;
+    --code-keyword: #4CAF50;
+    --code-property: #C79000;
+    --code-punctuation: #2D2D2D;
+    --code-string: #C41A16;
+    --code-tag: #4CAF50;
+    --code-value: #C41A16;
+    --code-important: #C41A16;
+    --code-operator: #2D2D2D;
+}
+
+/* ============================================================
    浅色模式变量（本地 Obsidian）
    ============================================================ */
 .theme-light {
@@ -47,6 +73,26 @@
     --h1-color: #111111;
     --h2-color: #111111;
     --h3-color: #222222;
+
+    --code-comment: #999999;
+    --code-function: #2D2D2D;
+    --code-keyword: #4CAF50;
+    --code-property: #C79000;
+    --code-punctuation: #2D2D2D;
+    --code-string: #C41A16;
+    --code-tag: #4CAF50;
+    --code-value: #C41A16;
+    --code-important: #C41A16;
+    --code-operator: #2D2D2D;
+    --jt-code-block-bg: #FFFFFF;
+    --jt-code-inline-bg: #F0EDE6;
+    --jt-code-border: #EBEBEB;
+    --jt-code-text: #2D2D2D;
+    --jt-code-inline-text: #CF6530;
+    --jt-code-copy-button-color: #737373;
+    --jt-code-copy-button-hover-bg: rgba(207, 101, 48, 0.08);
+    --code-background: var(--jt-code-block-bg);
+    --code-normal: var(--jt-code-text);
 }
 
 /* ============================================================
@@ -84,6 +130,26 @@
     --h1-color: #FFFFFF;
     --h2-color: #FFFFFF;
     --h3-color: #EBEBEB;
+
+    --code-comment: #777777;
+    --code-function: #DCDCAA;
+    --code-keyword: #81C784;
+    --code-property: #FFAB40;
+    --code-punctuation: #EBEBEB;
+    --code-string: #EF9A9A;
+    --code-tag: #81C784;
+    --code-value: #EF9A9A;
+    --code-important: #EF9A9A;
+    --code-operator: #EBEBEB;
+    --jt-code-block-bg: #1C1A18;
+    --jt-code-inline-bg: #1C1A18;
+    --jt-code-border: #3A3835;
+    --jt-code-text: #EBEBEB;
+    --jt-code-inline-text: #D97757;
+    --jt-code-copy-button-color: #999590;
+    --jt-code-copy-button-hover-bg: rgba(217, 119, 87, 0.12);
+    --code-background: var(--jt-code-block-bg);
+    --code-normal: var(--jt-code-text);
 }
 
 /* ============================================================
@@ -150,6 +216,28 @@
    暗色模式样式（系统暗色兜底，未手动选 light 时生效）
    ============================================================ */
 @media (prefers-color-scheme: dark) {
+    body:not(.theme-light) {
+        --jt-code-block-bg: #1C1A18;
+        --jt-code-inline-bg: #1C1A18;
+        --jt-code-border: #3A3835;
+        --jt-code-text: #EBEBEB;
+        --jt-code-inline-text: #D97757;
+        --jt-code-copy-button-color: #999590;
+        --jt-code-copy-button-hover-bg: rgba(217, 119, 87, 0.12);
+        --code-background: var(--jt-code-block-bg);
+        --code-normal: var(--jt-code-text);
+        --code-comment: #777777;
+        --code-function: #DCDCAA;
+        --code-keyword: #81C784;
+        --code-property: #FFAB40;
+        --code-punctuation: #EBEBEB;
+        --code-string: #EF9A9A;
+        --code-tag: #81C784;
+        --code-value: #EF9A9A;
+        --code-important: #EF9A9A;
+        --code-operator: #EBEBEB;
+    }
+
     body:not(.theme-light),
     body:not(.theme-light) .site-body,
     body:not(.theme-light) .site-body-center-column,
@@ -335,79 +423,170 @@ blockquote {
 /* ============================================================
    代码块 - 通用（本地 + Publish 均生效）
    ============================================================ */
-pre, .markdown-rendered pre, .publish-article pre {
-    background-color: #FDFCFB;
-    border: 1px solid var(--background-modifier-border, #EBEBEB);
+pre,
+.markdown-rendered pre,
+.publish-article pre,
+.el-pre > pre,
+.has-copy-button > pre,
+pre[class*="language-"] {
+    background-color: var(--jt-code-block-bg) !important;
+    color: var(--jt-code-text) !important;
+    border: 1px solid var(--jt-code-border) !important;
     border-radius: 8px;
     padding: 16px;
     margin: 1em 0;
     overflow-x: auto;
     font-size: 14px;
     line-height: 1.6;
+    box-shadow: none;
 }
 
 code, .markdown-rendered code, .publish-article code {
     font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
     font-size: 0.9em;
+    color: inherit;
 }
 
 /* 行内代码 */
 :not(pre) > code,
 .markdown-rendered :not(pre) > code,
 .publish-article :not(pre) > code {
-    background-color: var(--background-secondary, #F0EDE6);
-    border: 1px solid var(--background-modifier-border, #EBEBEB);
+    background-color: var(--jt-code-inline-bg) !important;
+    border: 1px solid var(--jt-code-border) !important;
     border-radius: 4px;
     padding: 2px 6px;
     font-size: 0.85em;
-    color: #CF6530 !important;
+    color: var(--jt-code-inline-text) !important;
 }
 
 /* 代码块内的 code 不要额外样式 */
-pre code, .markdown-rendered pre code, .publish-article pre code {
-    background: none;
-    border: none;
+pre code,
+.markdown-rendered pre code,
+.publish-article pre code,
+.el-pre > pre code,
+.has-copy-button > pre code,
+code[class*="language-"] {
+    background: transparent !important;
+    border: none !important;
     padding: 0;
     border-radius: 0;
     font-size: inherit;
+    color: inherit !important;
 }
 
-/* 暗色代码块 */
-.theme-dark pre, .theme-dark .publish-article pre {
-    background-color: #1C1A18;
-    border-color: #3A3835;
-}
-.theme-dark :not(pre) > code, .theme-dark .publish-article :not(pre) > code {
-    background-color: #1C1A18;
-    border-color: #3A3835;
+.el-pre,
+.has-copy-button {
+    background: transparent !important;
 }
 
-@media (prefers-color-scheme: dark) {
-    body:not(.theme-light) pre,
-    body:not(.theme-light) .publish-article pre {
-        background-color: #1C1A18;
-        border-color: #3A3835;
-    }
-    body:not(.theme-light) :not(pre) > code,
-    body:not(.theme-light) .publish-article :not(pre) > code {
-        background-color: #1C1A18;
-        border-color: #3A3835;
-    }
+.el-pre > pre,
+.has-copy-button > pre {
+    padding-right: 3.25rem;
+}
+
+.copy-code-button {
+    color: var(--jt-code-copy-button-color) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus-visible {
+    color: var(--jt-code-inline-text) !important;
+    background-color: var(--jt-code-copy-button-hover-bg) !important;
+}
+
+.copy-code-button svg {
+    color: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* ============================================================
+   代码语法高亮 - Prism.js（变量驱动，亮暗模式共用）
+   ============================================================ */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--code-comment, #999999);
+    font-style: italic;
+}
+
+.token.keyword,
+.token.tag,
+.token.builtin,
+.token.boolean,
+.token.selector,
+.token.atrule {
+    color: var(--code-keyword, #4CAF50);
+}
+
+.token.class-name,
+.token.property,
+.token.attr-name {
+    color: var(--code-property, #C79000);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.regex,
+.token.variable {
+    color: var(--code-string, #C41A16);
+}
+
+.token.function {
+    color: var(--code-function, #2D2D2D);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+    color: var(--code-operator, #2D2D2D);
+}
+
+.token.punctuation {
+    color: var(--code-punctuation, #2D2D2D);
+}
+
+.token.annotation,
+.token.decorator {
+    color: var(--code-tag, #4CAF50);
+    font-weight: 600;
+}
+
+.token.important {
+    color: var(--code-important, #C41A16);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
 }
 
 /* 本地 Obsidian 编辑模式代码块 */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
     font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
-    background-color: #FDFCFB !important;
-    border-left: 1px solid var(--background-modifier-border);
-    border-right: 1px solid var(--background-modifier-border);
+    background-color: var(--jt-code-block-bg) !important;
+    color: var(--jt-code-text) !important;
+    border-left: 1px solid var(--jt-code-border);
+    border-right: 1px solid var(--jt-code-border);
     padding-left: 16px !important;
     padding-right: 16px !important;
 }
 
 /* 代码块开头行：上边框 + 上圆角 */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
-    border-top: 1px solid var(--background-modifier-border);
+    border-top: 1px solid var(--jt-code-border);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding-top: 8px;
@@ -415,7 +594,7 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
 
 /* 代码块结尾行：下边框 + 下圆角 */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
-    border-bottom: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--jt-code-border);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding-bottom: 8px;
