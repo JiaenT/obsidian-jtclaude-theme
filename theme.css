@@ -360,6 +360,7 @@ code, .markdown-rendered code, .publish-article code {
     border-radius: 4px;
     padding: 2px 6px;
     font-size: 0.85em;
+    color: #CF6530 !important;
 }
 
 /* 代码块内的 code 不要额外样式 */
@@ -423,12 +424,35 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
 /* ============================================================
    表格 - 通用（本地 + Publish 均生效）
    ============================================================ */
+/* 表格父容器撑满宽度 */
+.markdown-preview-sizer > div:has(> table),
+.markdown-preview-section > div:has(> table),
+.markdown-rendered > div:has(> table) {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 .markdown-rendered table,
 .markdown-preview-view table,
 .publish-article table {
     border-collapse: collapse;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: auto !important;
+    display: table !important;
     border: none !important;
+}
+
+/* 第一列收缩到内容宽度，剩余空间给后续列 */
+.markdown-rendered table th:first-child,
+.markdown-preview-view table th:first-child,
+.publish-article table th:first-child,
+.markdown-rendered table td:first-child,
+.markdown-preview-view table td:first-child,
+.publish-article table td:first-child {
+    width: 1% !important;
+    white-space: nowrap;
 }
 
 .markdown-rendered table th,
@@ -437,7 +461,7 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
     text-align: left !important;
     padding: 12px 16px !important;
     border: none !important;
-    border-bottom: 2px solid var(--text-normal, #3D3929) !important;
+    border-bottom: 1px solid var(--background-modifier-border, #EBEBEB) !important;
     font-weight: 600;
 }
 
@@ -460,6 +484,40 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
 .markdown-preview-view table thead tr,
 .publish-article table thead tr {
     background: none !important;
+}
+
+/* 表格单元格字号固定 */
+.markdown-rendered table td,
+.markdown-rendered table th,
+.markdown-preview-view table td,
+.markdown-preview-view table th {
+    font-size: var(--font-text-size, 16px) !important;
+    line-height: 1.6 !important;
+}
+
+/* 点击单元格时注入的 CodeMirror 编辑器继承单元格字号 */
+.markdown-rendered td .markdown-source-view,
+.markdown-rendered th .markdown-source-view,
+.markdown-preview-view td .markdown-source-view,
+.markdown-preview-view th .markdown-source-view {
+    font-size: inherit !important;
+}
+
+.markdown-rendered td .cm-editor,
+.markdown-rendered th .cm-editor,
+.markdown-rendered td .cm-content,
+.markdown-rendered th .cm-content,
+.markdown-rendered td .cm-line,
+.markdown-rendered th .cm-line {
+    font-size: inherit !important;
+    line-height: inherit !important;
+    padding: 0 !important;
+}
+
+.markdown-rendered td .cm-scroller,
+.markdown-rendered th .cm-scroller {
+    font-family: inherit !important;
+    line-height: inherit !important;
 }
 
 /* ============================================================
