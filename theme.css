@@ -336,7 +336,7 @@ blockquote {
    代码块 - 通用（本地 + Publish 均生效）
    ============================================================ */
 pre, .markdown-rendered pre, .publish-article pre {
-    background-color: var(--background-secondary, #F0EDE6);
+    background-color: #FDFCFB;
     border: 1px solid var(--background-modifier-border, #EBEBEB);
     border-radius: 8px;
     padding: 16px;
