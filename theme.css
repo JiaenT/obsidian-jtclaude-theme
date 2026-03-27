@@ -398,7 +398,7 @@ pre code, .markdown-rendered pre code, .publish-article pre code {
 /* 本地 Obsidian 编辑模式代码块 */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
     font-family: "SF Mono", "Fira Code", "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
-    background-color: var(--background-secondary);
+    background-color: #FDFCFB !important;
     border-left: 1px solid var(--background-modifier-border);
     border-right: 1px solid var(--background-modifier-border);
     padding-left: 16px !important;
